@@ -1,0 +1,91 @@
+doctype html
+html
+    head
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        title= title
+        link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+        link(rel='stylesheet', href='/stylesheets/all.min.css')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+
+    body.p-0
+        .container-fluid
+            nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.rounded
+                a.navbar-brand(href='/') The Music Store 
+                button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+                    span.navbar-toggler-icon
+
+                #navbarSupportedContent.collapse.navbar-collapse
+                    .navbar-nav.me-auto.mb-2.mb-lg-0
+                        li.nav-item
+                            a.nav-link(href='/', area-current='page') Home
+                        li.nav-item
+                            a.nav-link(href='/about') About
+                        li.nav-item
+                            a.nav-link(href='/list') Music List  
+                        li.nav-item
+                            a.nav-link(href='/display') Display
+
+            block content
+                
+            //- footer.page-footer.font-small.unique-color-dark.pt-4.footerbg
+    footer.page-footer.font-small.bg-dark.mt-5
+        .container.color-dark
+            .row.py-4.d-flex.align-items-center
+                .col-md-3.col-lg-4.col-xl-3.mx-auto.mb-4.text-white
+                    h6.text-uppercase.font-weight-bold Company name
+                    hr.deep-purple.accent-2.mb-4.mt-0.d-inline-block.mx-auto(style='width: 60px;')
+                    p
+                    | Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
+                    | consectetur
+                    | adipisicing elit.
+        
+                .col-md-2.col-lg-2.col-xl-2.mx-auto.mb-4.text-white
+                    h6.text-uppercase.font-weight-bold Products
+                    hr.deep-purple.accent-2.mb-4.mt-0.d-inline-block.mx-auto(style='width: 60px;')
+                    p
+                    a.text-white.text-decoration-none(href='#!') MDBootstrap
+                    p
+                    a.text-white.text-decoration-none(href='#!') MDWordPress
+                    p
+                    a.text-white.text-decoration-none(href='#!') BrandFlow
+                    p
+                    a.text-white.text-decoration-none(href='#!') Bootstrap Angular
+        
+                .col-md-3.col-lg-2.col-xl-2.mx-auto.mb-4.text-white
+                    h6.text-uppercase.font-weight-bold Useful links
+                    hr.deep-purple.accent-2.mb-4.mt-0.d-inline-block.mx-auto(style='width: 60px;')
+                    p
+                    a.text-white.text-decoration-none(href='#!') Your Account
+                    p
+                    a.text-white.text-decoration-none(href='#!') Become an Affiliate
+                    p
+                    a.text-white.text-decoration-none(href='#!') Shipping Rates
+                    p
+                    a.text-white.text-decoration-none(href='#!') Help
+        
+                .col-md-4.col-lg-3.col-xl-3.mx-auto.mb-md-0.mb-4.text-white
+                    h6.text-uppercase.font-weight-bold Contact
+                    hr.deep-purple.accent-2.mb-4.mt-0.d-inline-block.mx-auto(style='width: 60px;')
+                    p
+                    i.fas.fa-home.mr-3
+                    |  New York, NY 10012, US
+                    p
+                    i.fas.fa-envelope.mr-3
+                    |  info@example.com
+                    p
+                    i.fas.fa-phone.mr-3
+                    |  + 01 234 567 88
+                    p
+                    i.fas.fa-print.mr-3
+                    |  + 01 234 567 89
+        
+            .footer-copyright.text-center.py-3(style='color: #616161;')
+                | &copy; 2020 Copyright:
+                a.text-white.text-decoration-none(href='https://www.conestogac.on.ca/')  Vipul Darji
+
+                //- .footer-copyright.text-center.py-3.fixed-bottom.bg-info
+                //-     | &copy; 2022 Copyright: Vipul Darji 
+            script(src='https://code.jquery.com/jquery-3.1.1.slim.min.js')
+            script(src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js')
+            script(src='/javascripts/bootstrap.min.js')
+            script(src='https://use.fontawesome.com/b377d6692e.js')

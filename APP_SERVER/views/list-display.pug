@@ -1,0 +1,20 @@
+extends layout
+
+block content
+    
+    h1.text-center.mt-5.display-4 Available Songs
+
+    br
+    
+    div.shadow-lg.bg-white.rounded.m-5
+        .row.gx-5.gy-5.row-cols-1.row-cols-md-2.row-cols-lg-3.row-cols-xl-4
+            each book in books
+                .column.align-self-center
+                    .card
+                    - var source = book.src
+                        img.card-img-top(src=book.src)
+                        .card-body.text-center
+                            h4.card-title #{book.title}
+                            //small by
+                            p.card-text by #{book.author}
+                            a.bg-info.btn.btn-secondary(href="#") Buy Or Rent
