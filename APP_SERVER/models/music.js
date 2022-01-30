@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 const reviewSchema = new mongoose.Schema({
   artist: String,
@@ -13,7 +13,7 @@ const reviewSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-})
+});
 
 const musicSchema = new mongoose.Schema({
   name: {
@@ -33,6 +33,6 @@ const musicSchema = new mongoose.Schema({
     required: true,
   },
   reviews: [reviewSchema],
-})
+});
 
-mongoose.model('Music', musicSchema)
+mongoose.model('Music', musicSchema);
