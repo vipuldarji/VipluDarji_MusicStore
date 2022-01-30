@@ -5,7 +5,7 @@ const dbURI =
   'mongodb+srv://Imvipul_29:Passw0rd@assignmentdb.wb5ut.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 mongoose.connect(dbURI, {
-  dbName: 'myfoodDB',
+  dbName: 'musicStore',
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
