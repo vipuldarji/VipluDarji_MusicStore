@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 // const dbURI = "mongodb://localhost/myfoodDB";
 const dbURI =
-  'mongodb+srv://Imvipul_29:Imvipul_29@assignmentdb.wb5ut.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+  'mongodb+srv://Imvipul_29:Passw0rd@assignmentdb.wb5ut.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 mongoose.connect(dbURI, {
   dbName: 'myfoodDB',
