@@ -9,18 +9,18 @@ const reviewSchema = new mongoose.Schema({
     required: true,
   },
   reviewText: String,
-  createdOn: {
-    type: Date,
-    default: Date.now,
-  },
 });
 
 const musicSchema = new mongoose.Schema({
-  name: {
+  artist_name: {
     type: String,
     required: true,
   },
   track: {
+    type: String,
+    required: true,
+  },
+  genre: {
     type: String,
     required: true,
   },
@@ -31,6 +31,10 @@ const musicSchema = new mongoose.Schema({
   image: {
     type: String,
     required: true,
+  },
+  createdOn: {
+    type: Date,
+    default: Date.now,
   },
   reviews: [reviewSchema],
 });
