@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-// const Music = mongoose.model('Music');
+const Music = mongoose.model('Music');
 
 const songsList = (req, res) => {
   res.status(200).json({ message: 'Success' });
