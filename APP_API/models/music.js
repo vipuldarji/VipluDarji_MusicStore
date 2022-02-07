@@ -1,14 +1,15 @@
 const mongoose = require('mongoose');
 
 const reviewSchema = new mongoose.Schema({
-  artist: String,
   rating: {
     type: Number,
     min: 0,
     max: 5,
     required: true,
   },
-  reviewText: String,
+  reviewText: {
+    type: String,
+  },
 });
 
 const musicSchema = new mongoose.Schema({
@@ -30,7 +31,7 @@ const musicSchema = new mongoose.Schema({
   },
   image: {
     type: String,
-    required: true,
+    //required: true,
   },
   createdOn: {
     type: Date,
