@@ -5,7 +5,6 @@ block content
     .row
       .col-12.col-md-8.mt-3
         form#songformdata.songform(action='/create' method='POST')
-          #error.alert.alert-danger(role='alert') #{error}
           .form-group.row.mb-3
             label.col-10.col-sm-2.col-form-label Artist Name 
             .col-12.col-sm-10
@@ -26,4 +25,4 @@ block content
           .form-group.text-center
             label(for='') Select Cover Photo (Optional)  
                 input.form-control-file(type='file' name='image')
-          button#sub.btn.btn-primary(type='submit') Submit
+          button#sub.btn.btn-primary(type='submit') Submit  
