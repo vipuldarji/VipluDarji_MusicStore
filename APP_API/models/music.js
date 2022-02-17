@@ -5,39 +5,39 @@ const reviewSchema = new mongoose.Schema({
     type: Number,
     min: 0,
     max: 5,
-    required: true,
+    required: false
   },
   reviewText: {
-    type: String,
-  },
+    type: String
+  }
 });
 
 const musicSchema = new mongoose.Schema({
   artist_name: {
     type: String,
-    required: true,
+    required: true
   },
   track: {
     type: String,
-    required: true,
+    required: true
   },
   genre: {
     type: String,
-    required: true,
+    required: false
   },
   price: {
     type: Number,
-    required: true,
+    required: true
   },
   image: {
-    type: String,
+    type: String
     //required: true,
   },
   createdOn: {
     type: Date,
-    default: Date.now,
+    default: Date.now
   },
-  reviews: [reviewSchema],
+  reviews: [reviewSchema]
 });
 
 mongoose.model('Music', musicSchema);

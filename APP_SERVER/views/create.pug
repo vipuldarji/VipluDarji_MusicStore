@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  .container
+    .row
+      .col-12.col-md-8.mt-3
+        form#songformdata.songform(action='/create' method='POST')
+          #error.alert.alert-danger(role='alert') #{error}
+          .form-group.row.mb-3
+            label.col-10.col-sm-2.col-form-label Artist Name 
+            .col-12.col-sm-10
+              input#title.form-control(type='text' required='' aria-describedby='' placeholder='Enter Track' name='artist_name')
+          .form-group.row.mb-3
+            label.col-10.col-sm-2.col-form-label Track 
+            .col-12.col-sm-10
+              input#author.form-control(type='text' required='' aria-describedby='' placeholder='Enter Artist Name' name='track')
+          .form-group.row.mb-3
+            label.col-10.col-sm-2.col-form-label Genre
+            .col-12.col-sm-10
+              input#price.form-control(type='text' required='' aria-describedby='' placeholder='Enter Price' name='genre')
+          .form-group.row.mb-3
+            label.col-10.col-sm-2.col-form-label Price
+            .col-12.col-sm-10
+              textarea#review.form-control(type='text' required='' aria-describedby='' placeholder='Enter Price' name='price')
+          .col-12.col-md-4
+          .form-group.text-center
+            label(for='') Select Cover Photo (Optional)  
+                input.form-control-file(type='file' name='image')
+          button#sub.btn.btn-primary(type='submit') Submit

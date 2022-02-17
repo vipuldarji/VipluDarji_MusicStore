@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-require('./APP_API/models/db')
+require('./APP_API/models/db');
 
 const indexRouter = require('./APP_SERVER/routes/index');
 const apiRouter = require('./APP_API/routes/index');
@@ -12,6 +12,7 @@ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'APP_SERVER', 'views'));
+app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'pug');
 
 app.use(logger('dev'));

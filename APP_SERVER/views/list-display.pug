@@ -3,18 +3,26 @@ extends layout
 block content
     
     h1.text-center.mt-5.display-4 Available Songs
+    p 
+        a.bg-info.btn.btn-secondary(href=`/create`) Add New Song
 
     br
     
     div.shadow-lg.bg-white.rounded.m-5
         .row.gx-5.gy-5.row-cols-1.row-cols-md-2.row-cols-lg-3.row-cols-xl-4
-            each book in books
+            each e in song
                 .column.align-self-center
                     .card
-                    - var source = book.src
-                        img.card-img-top(src=book.src)
+                        //h4.card-title #{e._id}
+                        //a(href=`/e/${e.image}`)
+                        //img(src=`D:\OneDrive - Conestoga College\Conestoga\Semester 3\MEAN\Mean Class\VipluDarji_MusicStore\public\images\Unaccomodated.jpg` alt="Loading..").w-25.mt-5
+                        
+
+                    - var source = e.src
+                        img.card-img-top(src=`../../images/${e.image}` style='width:100%; height:100%;')
                         .card-body.text-center
-                            h4.card-title #{book.title}
+                            h4.card-title #{e.track}
                             //small by
-                            p.card-text by #{book.author}
+                            p.card-text by #{e.artist_name}
+                            a.bg-info.btn.btn-secondary(href="#") $#{e.price}
                             a.bg-info.btn.btn-secondary(href="#") Buy Or Rent
