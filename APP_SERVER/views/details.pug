@@ -1,4 +1,5 @@
 extends layout 
+include _includes/sharedHTMLfunctions
 
 block content 
    
@@ -14,12 +15,18 @@ block content
                                 div.card.shadow-sm.mb-5.bg-white.rounded.text-decoration-none 
                                         div 
                                           p Current song  is : #{currentSong.track} 
+
+                                          p Genre : #{currentSong.genre}
                                           
                                           p Artist Name is : #{currentSong.artist_name} 
 
                                           p Current song price is : #{currentSong.price}$ 
 
                                           p Current song description is : #{currentSong.description}   
+
+                                          p Song Created On :    
+                                            span 
+                                                +formatDate(currentSong.createdOn) 
                                           p Current song image is :
 
                                           if currentSong.image == "" || currentSong.image == null
@@ -27,4 +34,6 @@ block content
                                           else 
                                             img.card-img-top(src=`../../images/${currentSong.image}` style='width:500px; height:500px;')
 
-                                          p #{currentSong.image}  
+                                          p #{currentSong.image}
+
+                                                                                    
