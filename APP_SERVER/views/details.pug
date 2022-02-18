@@ -3,7 +3,7 @@ extends layout
 block content 
    
    center
-   h1 Product List 
+    h1 Product Details page 
         div.mar
             div.shadow-lg.p-3.bg-white.rounded.m-5
              Center 
@@ -22,6 +22,9 @@ block content
                                           p Current song description is : #{currentSong.description}   
                                           p Current song image is :
 
-                                          img.card-img-top(src=`../../images/${currentSong.image}` style='width:500px; height:500px;')
+                                          if currentSong.image == "" || currentSong.image == null
+                                            img.card-img-top(src="../../images/notfound.jpg" style='width:500px; height:;500px')
+                                          else 
+                                            img.card-img-top(src=`../../images/${currentSong.image}` style='width:500px; height:500px;')
 
                                           p #{currentSong.image}  
