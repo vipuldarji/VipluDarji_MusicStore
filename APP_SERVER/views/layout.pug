@@ -82,7 +82,12 @@ html
                     |  + 01 234 567 89
         
             .footer-copyright.text-center.py-3(style='color: #616161;')
-                | &copy; 2020 Copyright:
+                | &copy;
+                script(type='text/javascript').
+                    document.write( new Date().getFullYear() );
+                | 
+                
+                | Copyright:
                 a.text-white.text-decoration-none(href='https://www.conestogac.on.ca/')  Vipul Darji
 
                 //- .footer-copyright.text-center.py-3.fixed-bottom.bg-info
