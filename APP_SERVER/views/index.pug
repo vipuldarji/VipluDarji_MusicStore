@@ -2,30 +2,26 @@ extends layout
 
 block content
     div
-        #carouselExampleIndicators.carousel.slide(data-ride='carousel')
-        ol.carousel-indicators
-            li.active(data-target='#carouselExampleIndicators' data-slide-to='0')
-            li(data-target='#carouselExampleIndicators' data-slide-to='1')
-            li(data-target='#carouselExampleIndicators' data-slide-to='2')
+    #carouselExampleIndicators.carousel-slide(data-bs-ride='carousel')
+        //- ol.carousel-indicators
+        //-     li.active(data-target='#carouselExampleIndicators', data-slide-to='0')
+        //-     li(data-target='#carouselExampleIndicators', data-slide-to='1')
+        //-     li(data-target='#carouselExampleIndicators', data-slide-to='2')
         .carousel-inner
             .carousel-item.active
-            center 
-                img.d-block.w-100.h-55(src="https://catchthemes.com/demo/my-music-band-ecommerce/files/2018/07/slider-02-1920x1080.jpg" alt='First slide')
-                div.carousel-caption.d-none.d-md-block
-                h3.text-uppercase Future is here
+                img.d-block.w-100.h-55(src='https://catchthemes.com/demo/my-music-band-ecommerce/files/2018/07/slider-02-1920x1080.jpg', alt='First slide')
+            //- .carousel-caption.d-none.d-md-block
+            //-     img.d-block.w-100.h-55(src='https://catchthemes.com/demo/my-music-band-ecommerce/files/2018/07/slider-02-1920x1080.jpg', alt='First slide')
             .carousel-item
-            center
-                img.d-block.w-100.h-55(src='https://www.tysers.com/wp-content/uploads/2020/04/music-slider-bg.jpg' alt='Second slide')
-                h3.text-uppercase Enlighten yourself
+                img.d-block.w-100.h-55(src='https://www.tysers.com/wp-content/uploads/2020/04/music-slider-bg.jpg', alt='Second slide')
             .carousel-item
-            center 
-                img.d-block.w-100.h-55(src='https://ccsrightsmanagement.com/wp-content/uploads/2021/10/Romes-1920x1080-ccs-slider-1.jpg' alt='Third slide')
-                h3.text-uppercase Quality at the best price
+                img.d-block.w-100.h-55(src='https://ccsrightsmanagement.com/wp-content/uploads/2021/10/Romes-1920x1080-ccs-slider-1.jpg', alt='Third slide')
+
         
-        script.  
-            $('.carousel').carousel({
-                interval: 3000
-            })
+        //- script.  
+        //-     $('.carousel').carousel({
+        //-         interval: 300
+        //-     })
 
 
     //- div.wrapper
