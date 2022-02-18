@@ -5,7 +5,6 @@ block content
     h1.text-center.mt-5.display-4 Available Songs
     p 
         a.bg-info.btn.btn-secondary(href=`/create`) Add New Song
-
     br
     
     div.shadow-lg.bg-white.rounded.m-5
@@ -17,6 +16,7 @@ block content
                         //a(href=`/e/${e.image}`)                       
 
                     - var source = e.src
+                    a(href=`/song/${e._id}`)=e.name
                         if e.image == "" || e.image == null
                             img.card-img-top(src="../../images/notfound.jpg" style='width:100%; height:100%;')
                         else 
@@ -26,4 +26,4 @@ block content
                             //small by
                             h3.card-text by #{e.artist_name}
                             a.bg-info.btn.btn-secondary(href="#") $#{e.price}
-                            a.bg-info.btn.btn-secondary(href="#") Buy Or Rent
+                            a.bg-info.btn.btn-secondary(href='') Buy Or Rent

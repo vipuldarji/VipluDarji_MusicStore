@@ -15,7 +15,8 @@ const songsList = (req, res) => {
 
 //
 const createSong = (req, res) => {
-  let { artist_name, track, genre, price, image, createdOn } = req.body;
+  let { artist_name, track, genre, price, image, description, createdOn } =
+    req.body;
 
   if (!artist_name || !track || !genre || !price) {
     return res.status(400).json({ message: 'All Fields required' });
@@ -32,7 +33,8 @@ const createSong = (req, res) => {
       genre,
       price,
       image,
-      createdOn,
+      description,
+      createdOn
     },
     (err, bookdata) => {
       if (err) {
@@ -49,7 +51,7 @@ const getSong = (req, res) => {
   Song.findById(req.params.songid).exec((err, songdata) => {
     if (!songdata) {
       return res.status(404).json({
-        message: 'Message not found',
+        message: 'Message not found'
       });
     } else if (err) {
       return res.status(404).json(err);
@@ -62,14 +64,14 @@ const getSong = (req, res) => {
 const updateSong = (req, res) => {
   if (!req.params.songid) {
     res.status(404).json({
-      message: 'Not found, songid is required',
+      message: 'Not found, songid is required'
     });
     return;
   }
   Song.findById(req.params.songid).exec((err, songdata) => {
     if (!songdata) {
       res.status(404).json({
-        message: 'songid not found',
+        message: 'songid not found'
       });
       return;
     } else if (err) {
@@ -81,6 +83,7 @@ const updateSong = (req, res) => {
     songdata.track = req.body.track;
     songdata.genre = req.body.genre;
     songdata.price = req.body.price;
+    songdata.description = req.body.description;
     songdata.image = req.body.image;
 
     songdata.save((err, songdata) => {
@@ -116,5 +119,5 @@ module.exports = {
   createSong,
   getSong,
   deleteSong,
-  updateSong,
+  updateSong
 };

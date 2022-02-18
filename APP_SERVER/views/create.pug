@@ -8,21 +8,25 @@ block content
           .form-group.row.mb-3
             label.col-10.col-sm-2.col-form-label Artist Name 
             .col-12.col-sm-10
-              input#title.form-control(type='text' required='' aria-describedby='' placeholder='Enter Track' name='artist_name')
+              input#artist_name.form-control(type='text' required='' aria-describedby='' placeholder='Enter Artist Name' name='artist_name')
           .form-group.row.mb-3
             label.col-10.col-sm-2.col-form-label Track 
             .col-12.col-sm-10
-              input#author.form-control(type='text' required='' aria-describedby='' placeholder='Enter Artist Name' name='track')
+              input#track.form-control(type='text' required='' aria-describedby='' placeholder='Enter Track' name='track')
           .form-group.row.mb-3
             label.col-10.col-sm-2.col-form-label Genre
             .col-12.col-sm-10
-              input#price.form-control(type='text' required='' aria-describedby='' placeholder='Enter Price' name='genre')
+              input#genre.form-control(type='text' required='' aria-describedby='' placeholder='Enter Genre' name='genre')
           .form-group.row.mb-3
             label.col-10.col-sm-2.col-form-label Price
             .col-12.col-sm-10
-              textarea#review.form-control(type='text' required='' aria-describedby='' placeholder='Enter Price' name='price')
+              textarea#price.form-control(type='text' required='' aria-describedby='' placeholder='Enter Price' name='price')
+          .form-group.row.mb-3
+            label.col-10.col-sm-2.col-form-label Description
+            .col-12.col-sm-10
+              textarea#price.form-control(type='text' rows=5 required='' aria-describedby='' placeholder='Enter Description' name='description')
           .col-12.col-md-4
-          .form-group.text-center
-            label(for='') Select Cover Photo (Optional)  
-                input.form-control-file(type='file' name='image')
+          .form-group.row.mb-3
+            label(for='image') Select Cover Photo (Optional)
+              input#image.form-control(type='file'  aria-describedby='' name='image')
           button#sub.btn.btn-primary(type='submit') Submit  
