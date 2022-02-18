@@ -18,13 +18,13 @@ const createSong = (req, res) => {
   let { artist_name, track, genre, price, image, description, createdOn } =
     req.body;
 
-  if (!artist_name || !track || !genre || !price || !image) {
+  if (!artist_name || !track || !genre || !price) {
     return res.status(400).json({ message: 'All Fields required' });
   }
 
-  if (image) {
-    image = mongoose.Types.ObjectId(image);
-  }
+  // if (image) {
+  //   image = mongoose.Types.ObjectId(image);
+  // }
 
   Song.create(
     {
@@ -36,11 +36,11 @@ const createSong = (req, res) => {
       description,
       createdOn
     },
-    (err, bookdata) => {
+    (err, songdata) => {
       if (err) {
         res.status(400).json(err);
       } else {
-        res.status(201).json(bookdata);
+        res.status(201).json(songdata);
       }
     }
   );
@@ -83,7 +83,6 @@ const updateSong = (req, res) => {
     songdata.track = req.body.track;
     songdata.genre = req.body.genre;
     songdata.price = req.body.price;
-    songdata.description = req.body.description;
     songdata.image = req.body.image;
 
     songdata.save((err, songdata) => {

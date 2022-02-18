@@ -83,8 +83,8 @@ const doAddNewSong = (req, res) => {
     track: req.body.track,
     genre: req.body.genre,
     price: req.body.price,
-    description: req.body.description,
-    image: req.body.image
+    image: req.body.image,
+    description: req.body.description
   };
   const requestOptions = {
     url: apiOptions.server + path,

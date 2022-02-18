@@ -30,9 +30,9 @@ block content
                                           p Current song image is :
 
                                           if currentSong.image == "" || currentSong.image == null
-                                            img.card-img-top(src="../../images/notfound.jpg" style='width:500px; height:;500px')
+                                            img.card-img-top(src="../../images/notfound.jpg" style='width:500px; height:500px;')
                                           else 
-                                            img.card-img-top(src=`../../images/${currentSong.image}` style='width:500px; height:500px;')
+                                            img.card-img-top(src=currentSong.image style='width:500px; height:500px;')
 
                                           p #{currentSong.image}
 

@@ -24,9 +24,12 @@ block content
           .form-group.row.mb-3
             label.col-10.col-sm-2.col-form-label Description
             .col-12.col-sm-10
-              textarea#price.form-control(type='text' rows=5 required='' aria-describedby='' placeholder='Enter Description' name='description')
+              textarea#price.form-control(type='text' rows=5 placeholder='Enter Description' name='description')
           .col-12.col-md-4
           .form-group.row.mb-3
-            label(for='image') Select Cover Photo (Optional)
-              input#image.form-control(type='file'  aria-describedby='' name='image')
+            label(for='image') Poster URL:
+            input.form-control(type='text' name='image' placeholder="Paste the Poster URL for the movie")
+            
+            //- label(for='image') Select Cover Photo (Optional)
+            //-   input#image.form-control(type='text'  aria-describedby='' name='image')
           button#sub.btn.btn-primary(type='submit') Submit  
