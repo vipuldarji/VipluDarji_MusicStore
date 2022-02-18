@@ -18,7 +18,7 @@ const createSong = (req, res) => {
   let { artist_name, track, genre, price, image, description, createdOn } =
     req.body;
 
-  if (!artist_name || !track || !genre || !price) {
+  if (!artist_name || !track || !genre || !price || !image) {
     return res.status(400).json({ message: 'All Fields required' });
   }
 
