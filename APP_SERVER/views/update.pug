@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  .container
+    .row
+      .col-12.col-md-8.mt-3
+        form#songformdata.songform(method='post', action='', role='form')
+          .form-group.row.mb-3
+            label.col-10.col-sm-2.col-form-label Artist Name 
+            .col-12.col-sm-10
+              input#artist_name.form-control(type='text' required='' aria-describedby='' placeholder='Enter Artist Name' name='artist_name' value=(undefined===currentSong ? "" : currentSong.artist_name))
+          .form-group.row.mb-3
+            label.col-10.col-sm-2.col-form-label Track 
+            .col-12.col-sm-10
+              input#track.form-control(type='text' required='' aria-describedby='' placeholder='Enter Track' name='track' value=(undefined===currentSong ? "" : currentSong.track))
+          .form-group.row.mb-3
+            label.col-10.col-sm-2.col-form-label Genre
+            .col-12.col-sm-10
+              input#genre.form-control(type='text' required='' aria-describedby='' placeholder='Enter Genre' name='genre' value=(undefined===currentSong ? "" : currentSong.genre))
+          .form-group.row.mb-3
+            label.col-10.col-sm-2.col-form-label Price
+            .col-12.col-sm-10
+              input#price.form-control(type='text' required='' aria-describedby='' placeholder='Enter Price' name='price' value=(undefined===currentSong ? "" : currentSong.price))
+          .form-group.row.mb-3
+            label.col-10.col-sm-2.col-form-label Description
+            .col-12.col-sm-10
+              input#price.form-control(type='text' rows=5 placeholder='Enter Description' name='description' value=(undefined===currentSong ? "" : currentSong.description))
+          .col-12.col-md-4
+          .form-group.row.mb-3
+            label(for='image') Poster URL (Paste the link from the browser):
+            input.form-control(type='text' name='image' placeholder="Paste the Poster URL for the movie" value=(undefined===currentSong ? "" : currentSong.image))
+            
+          button#sub.btn.btn-primary(type='submit') Submit  

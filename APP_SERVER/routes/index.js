@@ -19,6 +19,9 @@ router.get('/list', listRouter.songlist);
 
 // router.post('/uploadsong', upload.single('image'), listRouter.doAddNewSong);
 
+router.get('/update/:songid', listRouter.clickUpdateSong);
+router.post('/update/:songid', listRouter.updateSong);
+
 router
   .route('/create')
   .get(listRouter.addNewSong)
@@ -27,5 +30,7 @@ router
 router.get('/display', function (req, res, next) {
   res.render('display', { title: 'Display' });
 });
+
+router.get('/delete/:songid', listRouter.deleteSong);
 
 module.exports = router;

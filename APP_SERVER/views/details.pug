@@ -14,6 +14,9 @@ block content
                             .col-12.c.ml- 
                                 div.card.shadow-sm.mb-5.bg-white.rounded.text-decoration-none 
                                         div 
+                                          a.bg-info.btn.btn-secondary(href='/update/' + currentSong._id style='margin-right:10px;') Edit
+
+                                          a.bg-info.btn.btn-secondary(href='/delete/' + currentSong._id style='margin-right:10px;') Delete
                                           p Current song  is : #{currentSong.track} 
 
                                           p Genre : #{currentSong.genre}
@@ -35,5 +38,6 @@ block content
                                             img.card-img-top(src=currentSong.image style='width:500px; height:500px;')
 
                                           p #{currentSong.image}
+                                          
 
                                                                                     

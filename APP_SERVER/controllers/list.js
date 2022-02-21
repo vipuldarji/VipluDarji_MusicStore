@@ -24,6 +24,52 @@ const _renderHomePage = (req, res, responseBody) => {
   });
 };
 
+// Update
+var renderUpdatePage = function (req, res, responseBody) {
+  res.render('update', {
+    title: 'Update Song',
+    currentSong: responseBody
+  });
+};
+
+var clickUpdateSong = function (req, res) {
+  const path = '/api/song/' + req.params.songid;
+
+  const requestOptions = {
+    url: apiOptions.server + path,
+    method: 'GET',
+    json: {}
+  };
+
+  request(requestOptions, (err, response, body) => {
+    renderUpdatePage(req, res, body);
+  });
+};
+
+var updateSong = function (req, res) {
+  const path = '/api/song/' + req.params.songid;
+  const postdata = {
+    artist_name: req.body.artist_name,
+    track: req.body.track,
+    genre: req.body.genre,
+    price: req.body.price,
+    image: req.body.image,
+    description: req.body.description
+  };
+
+  const requestOptions = {
+    url: apiOptions.server + path,
+    method: 'PUT',
+    json: postdata
+  };
+
+  request(requestOptions, (err, response, body) => {
+    if (response.statusCode === 200) {
+      res.redirect('/list');
+    }
+  });
+};
+
 const _renderDetailPage = (req, res, responseBody) => {
   res.render('details', {
     currentSong: responseBody
@@ -98,6 +144,28 @@ const doAddNewSong = (req, res) => {
   });
 };
 
+var deleteSong = function (req, res) {
+  const path = '/api/song/' + req.params.songid;
+
+  const requestOptions = {
+    url: apiOptions.server + path,
+
+    method: 'DELETE',
+
+    json: {}
+  };
+
+  request(
+    requestOptions,
+
+    (err, response, body) => {
+      if (response.statusCode === 204) {
+        res.redirect('/list');
+      }
+    }
+  );
+};
+
 // const renderMusicpage = (req, res, responseBody) => {
 //   res.render('list-display', {
 //     title: 'Remix - A place for you to play songs',
@@ -126,5 +194,8 @@ module.exports = {
   songlist,
   doAddNewSong,
   addNewSong,
-  requestFileCreation
+  requestFileCreation,
+  updateSong,
+  clickUpdateSong,
+  deleteSong
 };

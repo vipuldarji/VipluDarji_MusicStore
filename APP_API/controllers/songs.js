@@ -61,30 +61,32 @@ const getSong = (req, res) => {
   //res.status(200).json({ "message": 'YOO Song Found' });
 };
 
-const updateSong = (req, res) => {
+const updateSong = function (req, res) {
   if (!req.params.songid) {
     res.status(404).json({
-      message: 'Not found, songid is required'
+      message: 'Songid is required.'
     });
+
     return;
   }
+
   Song.findById(req.params.songid).exec((err, songdata) => {
     if (!songdata) {
       res.status(404).json({
-        message: 'songid not found'
+        message: 'songid not found.'
       });
+
       return;
     } else if (err) {
       res.status(400).json(err);
       return;
     }
-
     songdata.artist_name = req.body.artist_name;
     songdata.track = req.body.track;
     songdata.genre = req.body.genre;
     songdata.price = req.body.price;
+    songdata.description = req.body.description;
     songdata.image = req.body.image;
-
     songdata.save((err, songdata) => {
       if (err) {
         res.status(404).json(err);
@@ -93,8 +95,44 @@ const updateSong = (req, res) => {
       }
     });
   });
-  // res.status(200).json({ message: 'Success' });
 };
+
+// const updateSong = (req, res) => {
+//   if (!req.params.songid) {
+//     res.status(404).json({
+//       message: 'Not found, songid is required'
+//     });
+//     return;
+//   }
+//   Song.findById(req.params.songid).exec((err, songdata) => {
+//     if (!songdata) {
+//       res.status(404).json({
+//         message: 'songid not found'
+//       });
+//       return;
+//     } else if (err) {
+//       res.status(400).json(err);
+//       return;
+//     }
+//
+//     songdata.artist_name = req.body.artist_name;
+//     songdata.track = req.body.track;
+//     songdata.genre = req.body.genre;
+//     songdata.price = req.body.price;
+//     songdata.description = req.body.description;
+//     songdata.image = req.body.image;
+//
+//     songdata.save((err, songdata) => {
+//       if (err) {
+//         res.status(404).json(err);
+//       } else {
+//         res.status(200).json(songdata);
+//       }
+//     });
+//   });
+//   // res.status(200).json({ message: 'Success' });
+// };
+
 
 const deleteSong = (req, res) => {
   const songid = req.params.songid;
