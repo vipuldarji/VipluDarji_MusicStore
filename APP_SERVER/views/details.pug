@@ -7,12 +7,11 @@ block content
     h1 Product Details page 
         div.mar
             div.shadow-lg.p-3.bg-white.rounded.m-5
-             Center 
-                 Div  
+             Center  
                     //- h1 Lattest Release
                     div.row
-                            .col-12.c.ml- 
-                                div.card.shadow-sm.mb-5.bg-white.rounded.text-decoration-none 
+                            .col-12.c.ml 
+                                div.card.shadow-sm.mb-5.bg-white.rounded.text-decoration-none.pb-5
                                         div 
                                           a.bg-info.btn.btn-secondary(href='/update/' + currentSong._id style='margin-right:10px;') Edit
 
@@ -36,8 +35,4 @@ block content
                                             img.card-img-top(src="../../images/notfound.jpg" style='width:500px; height:500px;')
                                           else 
                                             img.card-img-top(src=currentSong.image style='width:500px; height:500px;')
-
-                                          p #{currentSong.image}
-                                          
-
-                                                                                    
+                                                                                                                            
