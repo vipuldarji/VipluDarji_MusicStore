@@ -10,10 +10,21 @@ const apiRouter = require('./APP_API/routes/index');
 
 var app = express();
 
+app.use('/api', (req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept'
+  );
+  next();
+});
+
 // view engine setup
 app.set('views', path.join(__dirname, 'APP_SERVER', 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'pug');
+
+app.use(express.static(path.join(__dirname, 'APP_PUBLIC', 'build')));
 
 app.use(logger('dev'));
 app.use(express.json());
