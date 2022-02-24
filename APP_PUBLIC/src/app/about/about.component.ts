@@ -7,11 +7,6 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./about.component.css'],
 })
 export class AboutComponent implements OnInit {
-  pageContent = {
-    header: {
-      title: 'ABOUT US',
-    },
-  };
 
   constructor(private titleServie: Title) {}
 
