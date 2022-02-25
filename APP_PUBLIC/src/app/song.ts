@@ -9,6 +9,7 @@ export class Song {
   image: string = '';
   description: string = '';
   createdOn: number = 0;
+  src: string = '';
 }
 
 // export class Review {

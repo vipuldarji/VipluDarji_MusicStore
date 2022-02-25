@@ -4,8 +4,22 @@
                 <div class="col-12 c ml">
                     <div class="card shadow-sm mb-5 bg-white rounded text-decoration-none pb-5">
                         <div>
-                            <a class="bg-info btn btn-secondary"> Edit</a>
-                            <a class="bg-info btn btn-secondary"> Delete</a>
+                            <div>
+
+                                <button type="button" (click)="confirmDelete()" class="btn btn-danger delete_btn">Delete
+                                    this Book</button>&nbsp;
+                                <button type="button" (click)="updateDetails()" class="btn btn-secondary">Edit
+                                    Details</button>
+
+                                <p>Current song is :{{song.track}} </p>
+                                <p>Genre : {{song.genre}}</p>
+                                <p>Artist Name is : {{song.artist_name}} </p>
+                                <p>Current song price is : {{song.price}}$ </p>
+                                <p>Current song description is : {{song.description}} </p>
+                                <p>Song Created On : <span> {{song.createdOn}}</span></p>
+                                <p>Current song image is :</p><img class="card-img-top" src="{{song.image}}"
+                                    style="width:500px; height:500px;">
+                            </div>
                         </div>
                     </div>
                 </div>

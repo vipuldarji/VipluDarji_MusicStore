@@ -52,10 +52,10 @@ export class SongServiceService {
   }
 
   //For upload of image
-  public uploadImage(bookdata: object, mime: string): Promise<any> {
+  public uploadImage(songdata: object, mime: string): Promise<any> {
     const url: string = `${this.songUrl}/images`;
     return this.http
-      .post(url, bookdata, {
+      .post(url, songdata, {
         headers: new HttpHeaders().set('Content-Type', mime),
       })
       .toPromise()
