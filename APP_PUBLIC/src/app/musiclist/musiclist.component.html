@@ -5,9 +5,9 @@
 
 <div class="shadow-lg bg-white rounded m-5">
     <div class="row gx-5 gy-5 row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols">
-        <div class="column align-self-center" *ngFor="let song of songs"> <a routerLink="/song/{{song._id}}">
+        <div class="column align-self-center" *ngFor="let song of songs"> <a routerLink="/details/{{song._id}}">
                 <img class="card-img-top" src={{song.image}} style="width:500px; height:500px;"></a>
-            <div class="card-body text-center"><a routerLink="/song/{{song._id}}">
+            <div class="card-body text-center"><a routerLink="/details/{{song._id}}">
                     <h4 class="card-title">{{song.track}}</h4>
                     <!--small by-->
                     <h3 class="card-text">by {{song.artist_name}}</h3><br>

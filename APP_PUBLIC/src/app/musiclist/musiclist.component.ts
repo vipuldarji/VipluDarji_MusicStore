@@ -3,6 +3,7 @@ import { Title } from '@angular/platform-browser';
 import { SongServiceService } from '../song-service.service';
 import { Song } from '../song';
 
+
 @Component({
   selector: 'app-musiclist',
   templateUrl: './musiclist.component.html',
@@ -26,3 +27,8 @@ export class MusiclistComponent implements OnInit {
     this.titleServie.setTitle('Music List');
   }
 }
+
+export class AppComponent {
+  currentItem = 'Television';
+
+  }

@@ -51,7 +51,7 @@ import { FrameworkComponent } from './framework/framework.component';
         component: CreateComponent,
       },
       {
-        path: 'details',
+        path: 'details/:songid',
         component: SongdetailsComponent,
       },
       {
