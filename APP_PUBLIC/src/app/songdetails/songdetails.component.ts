@@ -29,7 +29,16 @@ export class SongdetailsComponent implements OnInit {
     private router: Router
   ) {}
 
+  public songs: Song[] = [];
+
+  private getSingleSong(): void {
+    this.songService
+      .getSong()
+      .then((foundSong) => (this.songs = foundSong));
+  }
+
   ngOnInit(): void {
+    this.getSingleSong();
     this.titleServie.setTitle('Details');
 
     this.route.paramMap
@@ -45,7 +54,7 @@ export class SongdetailsComponent implements OnInit {
           console.log('song', song);
           this.song = this.song;
           this.titleServie.setTitle(song.title);
-          this.setImageUrl(this.song as Song);
+          //this.setImageUrl(this.song as Song);
         },
         (error) => {
           this.errorPage = {
@@ -55,11 +64,18 @@ export class SongdetailsComponent implements OnInit {
         }
       );
   }
-  private setImageUrl(song: Song): void {
-    song.src = song.image
-      ? `${this.apiUrl}/images/${song.image}`
-      : `/assets/images/notfound.jpg`;
-  }
+
+  // private getSingleSong(id: string): void {
+  //   this.songService
+  //     .getSingleSong(id)
+  //     .then((foundSong) => (this.song = foundSong));
+  // }
+
+  // private setImageUrl(song: Song): void {
+  //   song.src = song.image
+  //     ? `${this.apiUrl}/images/${song.image}`
+  //     : `/assets/images/notfound.jpg`;
+  // }
 
   public async confirmDelete() {
     if (confirm('Are you sure to delete this book?')) {
