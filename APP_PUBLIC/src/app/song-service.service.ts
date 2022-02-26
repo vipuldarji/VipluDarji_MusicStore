@@ -25,7 +25,7 @@ export class SongServiceService {
 
   // For Single song
   public getSingleSong(id: string): Promise<Song | any> {
-    const url: string = `${this.songUrl}/song/${id}`;
+    const url: string = `${this.songUrl}`; // /song/${id}
 
     return this.http
       .get(url)

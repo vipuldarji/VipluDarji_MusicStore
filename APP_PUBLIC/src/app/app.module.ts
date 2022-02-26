@@ -55,7 +55,7 @@ import { FrameworkComponent } from './framework/framework.component';
         component: SongdetailsComponent,
       },
       {
-        path: 'update',
+        path: 'update/:songid',
         component: UpdatesongComponent,
       },
     ]),
