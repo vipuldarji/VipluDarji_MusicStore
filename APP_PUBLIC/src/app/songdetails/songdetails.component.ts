@@ -23,6 +23,9 @@ export class SongdetailsComponent implements OnInit {
   public genre = '';
   public price = '';
   public image = '';
+  public description = '';
+  public createdOn = '';
+
   errorPage = {
     statusText: '',
     status: '',
@@ -63,6 +66,8 @@ export class SongdetailsComponent implements OnInit {
           this.genre = song.genre;
           this.price = song.price;
           this.image = song.image;
+          this.description = song.description;
+          this.createdOn = song.createdOn;
           console.log('song', song);
           return (
             this.songid,
@@ -70,7 +75,9 @@ export class SongdetailsComponent implements OnInit {
             this.track,
             this.genre,
             this.price,
-            this.image
+            this.image,
+            this.description,
+            this.createdOn
           );
           this.songid = this.song._id;
           console.log(this.song);
