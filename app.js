@@ -19,6 +19,15 @@ app.use('/api', (req, res, next) => {
   next();
 });
 
+// app.delete('/api/song/:id', (req, res, next) => {
+//   postmodel.deleteOne({ _id: req.params.id }).then((result) => {
+//     console.log(result);
+//     res.status(200).json({
+//       message: 'Post deleted!'
+//     });
+//   }); 
+// }); 
+
 // view engine setup
 app.set('views', path.join(__dirname, 'APP_SERVER', 'views'));
 app.use(express.static(path.join(__dirname, 'public')));

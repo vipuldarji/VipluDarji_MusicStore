@@ -6,11 +6,10 @@
                         <div>
                             <div>
 
-                                <button type="button" (click)="confirmDelete()" class="btn btn-danger delete_btn">Delete
-                                    this Book</button>&nbsp;
+                                <button type="button" (click)="confirmDelete(songid)" class="btn btn-danger delete_btn">Delete
+                                    this Song</button>&nbsp;
                                 <button type="button" (click)="updateDetails()" class="btn btn-secondary">Edit
                                     Details</button>
-                                <p id="id">ID : {{songid}}</p>
                                 <p>Current song is :{{track}} </p>
                                 <p>Genre : {{genre}}</p>
                                 <p>Artist Name is : {{artist_name}} </p>

@@ -43,7 +43,6 @@ export class SongdetailsComponent implements OnInit {
     this.songService
       .getSingleSong('')
       .then((foundSong) => (this.store = foundSong));
-    console.log(this.store);
   }
 
   ngOnInit(): void {
@@ -68,7 +67,6 @@ export class SongdetailsComponent implements OnInit {
           this.image = song.image;
           this.description = song.description;
           this.createdOn = song.createdOn;
-          console.log('song', song);
           return (
             this.songid,
             this.artist_name,
@@ -93,25 +91,14 @@ export class SongdetailsComponent implements OnInit {
       );
   }
 
-  // private getSingleSong(id: string): void {
-  //   this.songService
-  //     .getSingleSong(id)
-  //     .then((foundSong) => (this.song = foundSong));
-  // }
+  public async confirmDelete(songId: string) {
+    this.songService.deleteSong(songId);
 
-  // private setImageUrl(song: Song): void {
-  //   song.src = song.image
-  //     ? `${this.apiUrl}/images/${song.image}`
-  //     : `/assets/images/notfound.jpg`;
-  // }
+    setTimeout(() => {
+      alert("Redirecting you to list page")
+      this.router.navigate(['list']);
+    }, 1000);
 
-  public async confirmDelete() {
-    if (confirm('Are you sure to delete this book?')) {
-      await this.songService.deleteSong(this.song._id);
-      this.router.navigate(['/list'], {
-        state: { display: 'Song Deleted', class: 'alert-danger' },
-      });
-    }
   }
 
   public updateDetails() {

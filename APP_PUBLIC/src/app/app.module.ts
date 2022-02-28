@@ -58,6 +58,10 @@ import { FrameworkComponent } from './framework/framework.component';
         path: 'update/:songid',
         component: UpdatesongComponent,
       },
+      {
+        path: 'delete/:songid',
+        component: MusiclistComponent,
+      },
     ]),
   ],
   providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
