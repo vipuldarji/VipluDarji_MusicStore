@@ -24,13 +24,32 @@ export class SongServiceService {
   }
 
   // For Single song
-  public getSingleSong(id: string): Promise<Song | any> {
-    const url: string = `${this.songUrl}`; // /song/${id}
+  public getSingleSong(id: string): Promise<Song | Song> {
+    const url: string = `${this.songUrl}/${id}`; // /song/${id}
 
     return this.http
       .get(url)
       .toPromise()
       .then((response) => response as Song)
+      .catch(this.handleError);
+  }
+
+  public getSingleProduct(songid: String): Promise<void | Song> {
+    return this.http
+      .get(this.songUrl + '/' + songid)
+      .toPromise()
+      .then((response) => response as Song)
+      .catch(this.handleError1);
+  }
+  handleError1(handleError1: any): Promise<void | Song> {
+    throw new Error('Method not implemented.');
+  }
+
+  deleteProduct(songid: String): Promise<void | Song[]> {
+    return this.http
+      .delete(this.songUrl + '/' + songid)
+      .toPromise()
+      .then((response) => response as Song[])
       .catch(this.handleError);
   }
 

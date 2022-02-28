@@ -2,8 +2,7 @@
         <div class="shadow-lg p-3 bg-white rounded m-5">
             <div class="row">
                 <div class="col-12 c ml">
-                    <div class="card shadow-sm mb-5 bg-white rounded text-decoration-none pb-5"
-                        *ngFor="let song of songs">
+                    <div class="card shadow-sm mb-5 bg-white rounded text-decoration-none pb-5">
                         <div>
                             <div>
 
@@ -11,14 +10,14 @@
                                     this Book</button>&nbsp;
                                 <button type="button" (click)="updateDetails()" class="btn btn-secondary">Edit
                                     Details</button>
-
-                                <p>Current song is :{{song.track}} </p>
-                                <p>Genre : {{song.genre}}</p>
-                                <p>Artist Name is : {{song.artist_name}} </p>
-                                <p>Current song price is : {{song.price}}$ </p>
-                                <p>Current song description is : {{song.description}} </p>
-                                <p>Song Created On : <span> {{song.createdOn}}</span></p>
-                                <p>Current song image is :</p><img class="card-img-top" src="{{song.image}}"
+                                <p id="id">ID : {{songid}}</p>
+                                <p>Current song is :{{track}} </p>
+                                <p>Genre : {{genre}}</p>
+                                <p>Artist Name is : {{artist_name}} </p>
+                                <p>Current song price is : {{price}}$ </p>
+                                <!-- <p>Current song description is : {{description}} </p>
+                                <p>Song Created On : <span> {{createdOn}}</span></p> -->
+                                <p>Current song image is :</p><img class="card-img-top" src="{{image}}"
                                     style="width:500px; height:500px;">
                             </div>
                         </div>

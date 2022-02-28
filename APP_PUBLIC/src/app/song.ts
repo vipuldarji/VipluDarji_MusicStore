@@ -1,14 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-
 export class Song {
   _id: string = '';
   artist_name: string = '';
   track: string = '';
   genre: string = '';
-  price: number = 0;
+  price: string = '';
   image: string = '';
   description: string = '';
-  createdOn: number = 0;
+  createdOn: string = '';
   src: string = '';
 }
 

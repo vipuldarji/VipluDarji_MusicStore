@@ -7,7 +7,6 @@ import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 import { Song } from '../song';
 
-
 @Component({
   selector: 'app-songdetails',
   templateUrl: './songdetails.component.html',
@@ -15,9 +14,15 @@ import { Song } from '../song';
   // providers: [SongServiceService],
 })
 export class SongdetailsComponent implements OnInit {
-  apiUrl = environment.apiBaseUrl;
   song: Song = new Song();
-
+  public id = '6213f743fd247f5198e0c4ef';
+  public store = {};
+  public songid = '';
+  public artist_name = '';
+  public track = '';
+  public genre = '';
+  public price = '';
+  public image = '';
   errorPage = {
     statusText: '',
     status: '',
@@ -33,8 +38,9 @@ export class SongdetailsComponent implements OnInit {
 
   private getSingleSong(): void {
     this.songService
-      .getSong()
-      .then((foundSong) => (this.songs = foundSong));
+      .getSingleSong('')
+      .then((foundSong) => (this.store = foundSong));
+    console.log(this.store);
   }
 
   ngOnInit(): void {
@@ -50,10 +56,25 @@ export class SongdetailsComponent implements OnInit {
         })
       )
       .subscribe(
-        (song: any) => {
+        (song: Song) => {
+          this.songid = song._id;
+          this.artist_name = song.artist_name;
+          this.track = song.track;
+          this.genre = song.genre;
+          this.price = song.price;
+          this.image = song.image;
           console.log('song', song);
-          this.song = this.song;
-          this.titleServie.setTitle(song.title);
+          return (
+            this.songid,
+            this.artist_name,
+            this.track,
+            this.genre,
+            this.price,
+            this.image
+          );
+          this.songid = this.song._id;
+          console.log(this.song);
+          // this.titleServie.setTitle(song.title);
           //this.setImageUrl(this.song as Song);
         },
         (error) => {
