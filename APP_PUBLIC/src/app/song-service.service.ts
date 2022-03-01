@@ -98,8 +98,8 @@ export class SongServiceService {
   // }
 
   // Update Song
-  public updateSong(id: string, song: any) {
-    const url: string = `${this.songUrl}/song/${id}`;
+  public updateSongDetail(song: any, id: string) {
+    const url: string = `${this.songUrl}/${id}`;
     return this.http
       .put(url, song)
       .toPromise()

@@ -8,7 +8,7 @@
 
                                 <button type="button" (click)="confirmDelete(songid)" class="btn btn-danger delete_btn">Delete
                                     this Song</button>&nbsp;
-                                <button type="button" (click)="updateDetails()" class="btn btn-secondary">Edit
+                                <button type="button" (click)="redirectUpdate(songid)" class="btn btn-secondary">Edit
                                     Details</button>
                                 <p>Current song is :{{track}} </p>
                                 <p>Genre : {{genre}}</p>
@@ -18,6 +18,8 @@
                                 <p>Song Created On : <span> {{createdOn}}</span></p>
                                 <p>Current song image is :</p><img class="card-img-top" src="{{image}}"
                                     style="width:500px; height:500px;">
+                                <!-- <app-updatesong [id]="songid">
+                                </app-updatesong> -->
                             </div>
                         </div>
                     </div>

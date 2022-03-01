@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
@@ -6,11 +6,14 @@ import { SongServiceService } from '../song-service.service';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 import { Song } from '../song';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
+import { UpdatesongComponent } from '../updatesong/updatesong.component';
 
 @Component({
   selector: 'app-songdetails',
   templateUrl: './songdetails.component.html',
   styleUrls: ['./songdetails.component.css'],
+
   // providers: [SongServiceService],
 })
 export class SongdetailsComponent implements OnInit {
@@ -59,6 +62,7 @@ export class SongdetailsComponent implements OnInit {
       )
       .subscribe(
         (song: Song) => {
+          this.store = song;
           this.songid = song._id;
           this.artist_name = song.artist_name;
           this.track = song.track;
@@ -75,7 +79,8 @@ export class SongdetailsComponent implements OnInit {
             this.price,
             this.image,
             this.description,
-            this.createdOn
+            this.createdOn,
+            this.store
           );
           this.songid = this.song._id;
           console.log(this.song);
@@ -93,12 +98,14 @@ export class SongdetailsComponent implements OnInit {
     this.songService.deleteSong(songId);
 
     setTimeout(() => {
-      alert("Redirecting you to list page")
+      alert('Redirecting you to list page');
       this.router.navigate(['list']);
     }, 1000);
   }
 
-  public updateDetails() {
-    this.router.navigate([`/update/${this.song._id}`]);
+  public async redirectUpdate(songId: string) {
+    // console.log(songId);
+    this.router.navigate([`/update/${songId}`]);
+    
   }
 }
