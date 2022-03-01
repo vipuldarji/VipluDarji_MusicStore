@@ -79,8 +79,6 @@ export class SongdetailsComponent implements OnInit {
           );
           this.songid = this.song._id;
           console.log(this.song);
-          // this.titleServie.setTitle(song.title);
-          //this.setImageUrl(this.song as Song);
         },
         (error) => {
           this.errorPage = {
@@ -98,7 +96,6 @@ export class SongdetailsComponent implements OnInit {
       alert("Redirecting you to list page")
       this.router.navigate(['list']);
     }, 1000);
-
   }
 
   public updateDetails() {

@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { APP_BASE_HREF } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
 
 import { HomepageComponent } from './homepage/homepage.component';
 import { AboutComponent } from './about/about.component';
@@ -28,6 +30,7 @@ import { FrameworkComponent } from './framework/framework.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
       {

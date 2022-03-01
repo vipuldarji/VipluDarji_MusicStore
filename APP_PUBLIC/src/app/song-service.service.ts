@@ -56,26 +56,20 @@ export class SongServiceService {
   // Delete song
 
   deleteSong(songId: string) {
-    this.http.delete('http://localhost:3000/api/song/' + songId)
-     .subscribe(()=>{  
-        console.log("Deleted");  
-    });  
+    this.http
+      .delete('http://localhost:3000/api/song/' + songId)
+      .subscribe(() => {
+        console.log('Deleted');
+      });
   }
-  // public async deleteSong(id: string) {
-  //   let song = await this.getSingleSong(id);
-  //   let url: string = '';
-  //   if (song.image) {
-  //     let url: string = `${this.songUrl}/images/${song.image}`;
-  //     console.log(url);
-  //     await this.http.delete(url).toPromise();
-  //   }
-  //   url = `${this.songUrl}/song/${id}`;
-  //   try {
-  //     return await this.http.delete(url).toPromise();
-  //   } catch (error) {
-  //     throw await this.handleError(error);
-  //   }
-  // }
+
+  public createSong(newSong: Song): Promise<void | Song> {
+    return this.http
+      .post(this.songUrl, newSong)
+      .toPromise()
+      .then((response) => response as Song)
+      .catch(this.handleError1);
+  }
 
   //For upload of image
   public uploadImage(songdata: object, mime: string): Promise<any> {
@@ -92,16 +86,16 @@ export class SongServiceService {
   }
 
   //For Create Song
-  public createSong(songdata: any): Promise<any> {
-    const url: string = `${this.songUrl}/song`;
-    return this.http
-      .post(url, songdata)
-      .toPromise()
-      .then((response) => {
-        return response;
-      })
-      .catch(this.handleError);
-  }
+  // public createSong(songdata: any): Promise<any> {
+  //   const url: string = `${this.songUrl}/song`;
+  //   return this.http
+  //     .post(url, songdata)
+  //     .toPromise()
+  //     .then((response) => {
+  //       return response;
+  //     })
+  //     .catch(this.handleError);
+  // }
 
   // Update Song
   public updateSong(id: string, song: any) {

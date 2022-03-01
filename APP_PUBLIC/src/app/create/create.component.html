@@ -2,31 +2,46 @@
     <div class="row">
         <div class="col-12 col-md-8 mt-3">
             <form class="songform" id="songformdata" action="/create" method="POST">
-                <div class="form-group row mb-3"><label class="col-10 col-sm-2 col-form-label">Artist Name </label>
-                    <div class="col-12 col-sm-10"><input class="form-control" id="artist_name" type="text" required=""
-                            aria-describedby="" placeholder="Enter Artist Name" name="artist_name" /></div>
+                <div class="form-group row mb-3">
+                    <label class="col-10 col-sm-2 col-form-label">Artist Name </label>
+                    <div class="col-12 col-sm-10">
+                        <input [(ngModel)]="newSong.artist_name" class="form-control" id="artist_name" type="text"
+                            aria-describedby="" placeholder="Enter Artist Name" name="artist_name" />
+                    </div>
                 </div>
-                <div class="form-group row mb-3"><label class="col-10 col-sm-2 col-form-label">Track </label>
-                    <div class="col-12 col-sm-10"><input class="form-control" id="track" type="text" required=""
-                            aria-describedby="" placeholder="Enter Track" name="track" /></div>
+                <div class="form-group row mb-3">
+                    <label class="col-10 col-sm-2 col-form-label">Track </label>
+                    <div class="col-12 col-sm-10">
+                        <input [(ngModel)]="newSong.track" class="form-control" id="track" type="text"
+                            aria-describedby="" placeholder="Enter Track" name="track" />
+                    </div>
                 </div>
                 <div class="form-group row mb-3"><label class="col-10 col-sm-2 col-form-label">Genre</label>
-                    <div class="col-12 col-sm-10"><input class="form-control" id="genre" type="text" required=""
-                            aria-describedby="" placeholder="Enter Genre" name="genre" /></div>
+                    <div class="col-12 col-sm-10">
+                        <input [(ngModel)]="newSong.genre" class="form-control" id="genre" type="text"
+                            aria-describedby="" placeholder="Enter Genre" name="genre" />
+                    </div>
                 </div>
                 <div class="form-group row mb-3"><label class="col-10 col-sm-2 col-form-label">Price</label>
-                    <div class="col-12 col-sm-10"><textarea class="form-control" id="price" type="text" required=""
-                            aria-describedby="" placeholder="Enter Price" name="price"></textarea></div>
+                    <div class="col-12 col-sm-10">
+                        <textarea [(ngModel)]="newSong.price" class="form-control" id="price" type="text"
+                            aria-describedby="" placeholder="Enter Price" name="price"></textarea>
+                    </div>
                 </div>
                 <div class="form-group row mb-3"><label class="col-10 col-sm-2 col-form-label">Description</label>
-                    <div class="col-12 col-sm-10"><textarea class="form-control" id="price" type="text" rows="5"
-                            placeholder="Enter Description" name="description"></textarea></div>
+                    <div class="col-12 col-sm-10">
+                        <textarea [(ngModel)]="newSong.description" class="form-control" id="description" type="text"
+                            rows="5" placeholder="Enter Description" name="description"></textarea>
+                    </div>
                 </div>
                 <div class="col-12 col-md-4"></div>
-                <div class="form-group row mb-3"><label for="image">Poster URL (Paste the link from the
-                        browser):</label><input class="form-control" type="text" name="image"
-                        placeholder="Paste the Poster URL for the movie" /></div><button class="btn btn-primary"
-                    id="sub" type="submit">Submit </button>
+                <div class="form-group row mb-3">
+                    <label for="image">Poster URL (Paste the link from the
+                        browser):</label>
+                    <input [(ngModel)]="newSong.image" class="form-control" type="text" name="image"
+                        placeholder="Paste the Poster URL for the movie" />
+                </div>
+                <button class="btn btn-primary" id="sub" (click)="createSong(newSong)" type="submit">Submit </button>
             </form>
         </div>
     </div>
