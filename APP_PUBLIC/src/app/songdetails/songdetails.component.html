@@ -1,12 +1,14 @@
-<h1 class="text-center mt-5 display-5">Product Details page <div class="mar">
+<h1 class="text mt-5 display-5" id="header">Product Details page
+    <div class="mar">
         <div class="shadow-lg p-3 bg-white rounded m-5">
             <div class="row">
                 <div class="col-12 c ml">
                     <div class="card shadow-sm mb-5 bg-white rounded text-decoration-none pb-5">
                         <div>
-                            <div>
+                            <div class="data1">
 
-                                <button type="button" (click)="confirmDelete(songid)" class="btn btn-danger delete_btn">Delete
+                                <button type="button" (click)="confirmDelete(songid)"
+                                    class="btn btn-danger delete_btn">Delete
                                     this Song</button>&nbsp;
                                 <button type="button" (click)="redirectUpdate(songid)" class="btn btn-secondary">Edit
                                     Details</button>

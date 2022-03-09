@@ -34,23 +34,9 @@ export class SongServiceService {
       .catch(this.handleError);
   }
 
-  public getSingleProduct(songid: String): Promise<void | Song> {
-    return this.http
-      .get(this.songUrl + '/' + songid)
-      .toPromise()
-      .then((response) => response as Song)
-      .catch(this.handleError1);
-  }
+
   handleError1(handleError1: any): Promise<void | Song> {
     throw new Error('Method not implemented.');
-  }
-
-  deleteProduct(songid: String): Promise<void | Song[]> {
-    return this.http
-      .delete(this.songUrl + '/' + songid)
-      .toPromise()
-      .then((response) => response as Song[])
-      .catch(this.handleError);
   }
 
   // Delete song
@@ -70,32 +56,6 @@ export class SongServiceService {
       .then((response) => response as Song)
       .catch(this.handleError1);
   }
-
-  //For upload of image
-  public uploadImage(songdata: object, mime: string): Promise<any> {
-    const url: string = `${this.songUrl}/images`;
-    return this.http
-      .post(url, songdata, {
-        headers: new HttpHeaders().set('Content-Type', mime),
-      })
-      .toPromise()
-      .then((response) => {
-        return response;
-      })
-      .catch(this.handleError);
-  }
-
-  //For Create Song
-  // public createSong(songdata: any): Promise<any> {
-  //   const url: string = `${this.songUrl}/song`;
-  //   return this.http
-  //     .post(url, songdata)
-  //     .toPromise()
-  //     .then((response) => {
-  //       return response;
-  //     })
-  //     .catch(this.handleError);
-  // }
 
   // Update Song
   public updateSongDetail(song: any, id: string) {

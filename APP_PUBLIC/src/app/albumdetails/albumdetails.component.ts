@@ -60,6 +60,7 @@ export class AlbumdetailsComponent implements OnInit {
           this.tracks = album.tracks;
           this.genre = album.genre;
           this.description = album.description;
+          this.image = album.image;
           // this.createdOn = album.createdOn;
           return (
             this.albumid,
@@ -67,6 +68,7 @@ export class AlbumdetailsComponent implements OnInit {
             this.tracks,
             this.genre,
             this.description,
+            this.image,
             // this.createdOn,
             this.store
           );

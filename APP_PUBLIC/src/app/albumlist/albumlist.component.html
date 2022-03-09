@@ -10,9 +10,10 @@
                 <img class="card-img-top" src={{album.image}} style="width:300px; height:340px;"></a>
             <div class="card-body text-center">
                 <a routerLink="/albumdetails/{{album._id}}">
-                    <h4 class="card-title">{{album.tracks}}</h4>
+                    <h3 class="card-text">{{album.name}}</h3>
+                    <h4 class="card-title"> by {{album.tracks}}</h4>
                     <!--small by-->
-                    <h3 class="card-text">by {{album.name}}</h3><br>
+                   
                 </a>
             </div>
         </div>
