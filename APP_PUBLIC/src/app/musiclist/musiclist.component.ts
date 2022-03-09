@@ -3,7 +3,6 @@ import { Title } from '@angular/platform-browser';
 import { SongServiceService } from '../song-service.service';
 import { Song } from '../song';
 
-
 @Component({
   selector: 'app-musiclist',
   templateUrl: './musiclist.component.html',
@@ -19,7 +18,7 @@ export class MusiclistComponent implements OnInit {
   private getSong(): void {
     this.songServiceService
       .getSong()
-      .then(foundSong => (this.songs = foundSong));
+      .then((foundSong) => (this.songs = foundSong));
   }
 
   ngOnInit(): void {
@@ -30,5 +29,4 @@ export class MusiclistComponent implements OnInit {
 
 export class AppComponent {
   currentItem = 'Television';
-
-  }
+}

@@ -1,0 +1,21 @@
+<h1 class="text-center mt-5 display-4">Available albums
+    <p><a class="bg-info btn btn-secondary" routerLink="/createalbum">Add New album</a></p>
+    <br />
+</h1>
+
+<div class="card">
+    <div class="row gx-5 gy-5 row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols">
+        <div class="column align-self-center" *ngFor="let album of albums">
+            <a routerLink="/albumdetails/{{album._id}}">
+                <img class="card-img-top" src={{album.image}} style="width:300px; height:340px;"></a>
+            <div class="card-body text-center">
+                <a routerLink="/albumdetails/{{album._id}}">
+                    <h4 class="card-title">{{album.tracks}}</h4>
+                    <!--small by-->
+                    <h3 class="card-text">by {{album.name}}</h3><br>
+                </a>
+            </div>
+        </div>
+        <div class="column align-self-center"> </div>
+    </div>
+</div>

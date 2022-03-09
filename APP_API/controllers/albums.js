@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const album = mongoose.model('Album');
 
-
 const albumsList = (req, res) => {
   album.find().exec((err, albumdata) => {
     if (err) {
@@ -13,12 +12,11 @@ const albumsList = (req, res) => {
 };
 
 const createAlbum = (req, res) => {
-  console.log("hiii");
-  let { name, tracks } =
-    req.body;
+  // console.log("hiii");
+  let { name, tracks, genre, description, image } = req.body;
 
-console.log("req.body",req.body);
-  if (!name || !tracks ) {
+  console.log('req.body', req.body);
+  if (!name || !tracks || !genre) {
     return res.status(400).json({ message: 'All Fields required' });
   }
 
@@ -26,6 +24,9 @@ console.log("req.body",req.body);
     {
       name,
       tracks,
+      genre,
+      description,
+      image
     },
     (err, albumdata) => {
       if (err) {
@@ -51,7 +52,7 @@ const getAlbum = (req, res) => {
 };
 
 const updateAlbum = function (req, res) {
-  if (!req.params.Albumid) {
+  if (!req.params.albumid) {
     res.status(404).json({
       message: 'Songid is required.'
     });
@@ -70,8 +71,8 @@ const updateAlbum = function (req, res) {
       res.status(400).json(err);
       return;
     }
-    albumdata.artist_name = req.body.artist_name;
-    albumdata.track = req.body.track;
+    albumdata.name = req.body.name;
+    albumdata.tracks = req.body.tracks;
     albumdata.genre = req.body.genre;
     albumdata.description = req.body.description;
     albumdata.image = req.body.image;
@@ -85,7 +86,7 @@ const updateAlbum = function (req, res) {
   });
 };
 const deleteAlbum = (req, res) => {
-  const songid = req.params.Albumid;
+  const albumid = req.params.albumid;
 
   if (albumid) {
     album.findByIdAndRemove(albumid).exec((err, albumdata) => {

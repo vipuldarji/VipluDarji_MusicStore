@@ -1,63 +1,95 @@
 <div class="container-fluid">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded">
-        <a routerLink="" class="navbar-brand">REWIND</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a routerLink="" class="nav-link" area-current="page">Home</a></li>
-                <li class="nav-item"><a routerLink="about" class="nav-link">About</a></li>
-                <li class="nav-item"><a routerLink="list" class="nav-link">Music List </a></li>
-                <li class="nav-item"><a routerLink="display" class="nav-link">Display</a></li>
-                <li class="nav-item"><a routerLink="create" class="nav-link">Create</a></li>
-            </div>
-        </div>
-    </nav>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded">
+    <a routerLink="" class="navbar-brand">REWIND</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a routerLink="" class="nav-link" area-current="page">Home</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="about" class="nav-link">About</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="list" class="nav-link">Music List</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="listAlbum" class="nav-link">Album List</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a routerLink="display" class="nav-link">Display</a>
+        </li> -->
+        <li class="nav-item">
+          <a routerLink="create" class="nav-link">Create Song</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="createalbum" class="nav-link">Album Create</a>
+        </li>
+      </div>
+    </div>
+  </nav>
 </div>
 <router-outlet></router-outlet>
 
 <footer class="page-footer font-small bg-dark mt-5">
-    <div class="container color-dark">
-        <div class="row py-4 d-flex align-items-center">
-            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 text-white">
-                <h6 class="text-uppercase font-weight-bold">Rewind</h6>
-                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;" />
-                <p></p>Of the converted stores, Rewind planned to stock a larger and broader array of music in
-                comparison to HMV,
-                including larger selections of vinyl records and music by local independent artists,
-                as well as expanded offerings of music and entertainment apparel and merchandise.
-            </div>
-            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 text-white">
-                <h6 class="text-uppercase font-weight-bold">Products</h6>
-                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;" />
-                <p></p><a class="text-white text-decoration-none" href="/">Home </a>
-                <p></p><a class="text-white text-decoration-none" href="/about">About Us</a>
-                <p></p><a class="text-white text-decoration-none" href="/list">Music List</a>
-                <p></p><a class="text-white text-decoration-none" href="/display">Display</a>
-            </div>
-            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 text-white">
-                <h6 class="text-uppercase font-weight-bold">Useful links</h6>
-                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;" />
-                <p></p><a class="text-white text-decoration-none" href="#!">Artist1</a>
-                <p></p><a class="text-white text-decoration-none" href="#!">Artist2</a>
-                <p></p><a class="text-white text-decoration-none" href="#!">Artist3</a>
-                <p></p><a class="text-white text-decoration-none" href="#!">Artist4</a>
-            </div>
-            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 text-white">
-                <h6 class="text-uppercase font-weight-bold">Contact</h6>
-                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;" />
-                <p></p><i class="fas fa-home mr-3"></i> Canada, ON 123456, CA<p></p><i class="fas fa-envelope mr-3"></i>
-                info@example.com<p></p><i class="fas fa-phone mr-3"></i> + 01 234 567 88<p></p><i
-                    class="fas fa-print mr-3"></i> + 01 234 567 89
-            </div>
-        </div>
-        <div class="footer-copyright text-center py-3" style="color: #616161;">&copy;
-            <script type="text/javascript">
-                document.write(new Date().getFullYear());
-            </script>
-            Copyright:<a class="text-white text-decoration-none" href="https://www.conestogac.on.ca/"> Vipul Darji</a>
-        </div>
+  <div class="container color-dark">
+    <div class="row py-4 d-flex align-items-center">
+      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 text-white">
+        <h6 class="text-uppercase font-weight-bold">Rewind</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;" />
+        <p></p>
+        Of the converted stores, Rewind planned to stock a larger and broader
+        array of music in comparison to HMV, including larger selections of
+        vinyl records and music by local independent artists, as well as
+        expanded offerings of music and entertainment apparel and merchandise.
+      </div>
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 text-white">
+        <h6 class="text-uppercase font-weight-bold">Products</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;" />
+        <p></p>
+        <a class="text-white text-decoration-none" href="/">Home </a>
+        <p></p>
+        <a class="text-white text-decoration-none" href="/about">About Us</a>
+        <p></p>
+        <a class="text-white text-decoration-none" href="/list">Music List</a>
+        <p></p>
+        <a class="text-white text-decoration-none" href="/display">Display</a>
+      </div>
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 text-white">
+        <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;" />
+        <p></p>
+        <a class="text-white text-decoration-none" href="#!">Artist1</a>
+        <p></p>
+        <a class="text-white text-decoration-none" href="#!">Artist2</a>
+        <p></p>
+        <a class="text-white text-decoration-none" href="#!">Artist3</a>
+        <p></p>
+        <a class="text-white text-decoration-none" href="#!">Artist4</a>
+      </div>
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 text-white">
+        <h6 class="text-uppercase font-weight-bold">Contact</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;" />
+        <p></p>
+        <i class="fas fa-home mr-3"></i> Canada, ON 123456, CA
+        <p></p>
+        <i class="fas fa-envelope mr-3"></i> info@example.com
+        <p></p>
+        <i class="fas fa-phone mr-3"></i> + 01 234 567 88
+        <p></p>
+        <i class="fas fa-print mr-3"></i> + 01 234 567 89
+      </div>
     </div>
+    <div class="footer-copyright text-center py-3" style="color: #616161;">
+      &copy;
+      <script type="text/javascript">
+        document.write(new Date().getFullYear());
+      </script>
+      Copyright:<a class="text-white text-decoration-none" href="https://www.conestogac.on.ca/">
+        Vipul Darji</a>
+    </div>
+  </div>
 </footer>

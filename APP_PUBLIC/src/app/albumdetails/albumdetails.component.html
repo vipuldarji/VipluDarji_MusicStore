@@ -1,0 +1,28 @@
+<h1 class="text-center mt-5 display-5">Product Details page <div class="mar">
+    <div class="shadow-lg p-3 bg-white rounded m-5">
+        <div class="row">
+            <div class="col-12 c ml">
+                <div class="card shadow-sm mb-5 bg-white rounded text-decoration-none pb-5">
+                    <div>
+                        <div>
+                            <button type="button" (click)="confirmDelete(albumid)" class="btn btn-danger delete_btn">Delete
+                                this Song</button>&nbsp;
+                            <button type="button" (click)="redirectUpdate(albumid)" class="btn btn-secondary">Edit
+                                Details</button>
+                            <p>Current song is :{{tracks}} </p>
+                            <p>Genre : {{genre}}</p>
+                            <p>Artist Name is : {{name}} </p>
+                            <p>Current song description is : {{description}} </p>
+                            <!-- <p>Song Created On : <span> {{createdOn}}</span></p> -->
+                            <p>Current song image is :</p><img class="card-img-top" src=".../../../../assets/images/notfound.jpg"
+                                style="width:300px; height:340px;">
+                            <!-- <app-updatesong [id]="songid">
+                            </app-updatesong> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</h1>
