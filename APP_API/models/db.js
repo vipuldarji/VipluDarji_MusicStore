@@ -48,3 +48,4 @@ process.once('SIGTERM', () => {
 });
 
 require('./music');
+require('./album');

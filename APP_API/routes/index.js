@@ -2,11 +2,20 @@ var express = require('express');
 var router = express.Router();
 
 const ctrlSong = require('../controllers/songs');
+const ctrlAlbum = require("../controllers/albums");
+
 router.get('/song', ctrlSong.songsList);
 router.get('/song/:songid', ctrlSong.getSong);
 router.delete('/song/:songid', ctrlSong.deleteSong);
 router.put('/song/:songid', ctrlSong.updateSong);
 router.post('/song', ctrlSong.createSong);
+
+router.get('/album', ctrlAlbum.albumsList);
+router.get('/album/:albumid', ctrlAlbum.getAlbum);
+router.delete('/album/:albumid', ctrlAlbum.deleteAlbum);
+router.put('/album/:albumid', ctrlAlbum.updateAlbum);
+router.post('/album', ctrlAlbum.createAlbum);
+
 module.exports = router;
 
 // songsList, createSong, getSong, deleteSong, updateSong;

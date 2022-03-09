@@ -9,6 +9,7 @@ const songsList = (req, res) => {
       return;
     }
     res.status(200).json(songdata);
+    console.log("songdata",songdata);
   });
   //res.status(200).json({ message: 'Success' });
 };
