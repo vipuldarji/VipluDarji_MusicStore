@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "APP_PUBLIC"
+  "defaultProject": "APP_PUBLIC",
+  "cli": {
+    "analytics": false
+  }
 }
